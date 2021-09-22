@@ -4,10 +4,10 @@
 
 ### Objectives:
 
-- Implementation of closed-form formulas with different discretization schemes.
-- Implementation of standard Monte Carlo and Brownian Bridge method for barrier options. 
-- Implementation of Multi Level Monte Carlo and antithetic MLMC.
-- Comparison of results in terms of variance reduction and time complexity.
+- Implementation of closed-form formulas with different discretization schemes
+- Implementation of standard Monte Carlo and Brownian Bridge method for barrier options under both BS and Heston model
+- Implementation of Multi Level Monte Carlo and antithetic MLMC
+- Comparison of results in terms of variance reduction and time complexity
 
 ### Results:
 

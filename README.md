@@ -1,4 +1,9 @@
 # MLMC
 
-C++ pricing of EU and path-dependent options using different discretization schemes and volatility models.
-Comparison between closed-form formulas, Monte Carlo and Multi Level Monte Carlo standard error.
+C++ pricing of EU and path-dependent options using 
+Different discretization schemes: Euleur & Milstein
+Volatility models: BS & Heston
+Comparison between closed-form formulas,  standard error 
+Monte Carlo standard and using the Brownian Bridge method
+Multi Level Monte Carlo: antithetic
+Variance reduction

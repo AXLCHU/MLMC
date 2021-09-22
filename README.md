@@ -1,6 +1,6 @@
 # MLMC
 
-C++ pricing of EU and path-dependent options using 
+### C++ European and path-dependent options pricing 
 Different discretization schemes: Euleur & Milstein
 Volatility models: BS & Heston
 Comparison between closed-form formulas,  standard error 

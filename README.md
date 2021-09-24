@@ -11,5 +11,9 @@
 
 ### Results:
 
--
--
+- Variance reduction for MC with Brownian Bridge method vs standard MC
+- Variance reduction for MLMC vs MC
+
+### Output overview
+
+

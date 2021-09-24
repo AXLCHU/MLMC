@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="BSM.hpp" />
     <ClInclude Include="Discretization_schemes.h" />
+    <ClInclude Include="Payoffs.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />

@@ -14,6 +14,9 @@
 - Variance reduction for MC with Brownian Bridge method vs standard MC
 - Variance reduction for MLMC vs MC
 
-### Output overview
+### Output overview :
+
+![MLMC_Results_3](https://user-images.githubusercontent.com/56386159/134657856-cca8a6ae-5dd1-4e54-9a43-bc0547875a9d.PNG)
+
 
 

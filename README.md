@@ -24,6 +24,15 @@
 
 
 ##
-### MLMC
+### MLMC:
 
 ![MLMC](https://user-images.githubusercontent.com/56386159/149523617-dca391f4-d48a-4ca9-87ab-bd75d9814bab.PNG)
+
+#
+### Multi-step Richardson-Romberg extrapolation:
+
+![MLMC-RR](https://user-images.githubusercontent.com/56386159/153062615-8a766c2f-424c-4ee0-ba09-9f24ce893e6a.PNG)
+
+
+#
+### References:

@@ -37,6 +37,8 @@
 ##
 ### MLMC:
 #
+-With time steps T/2**l:
+
 ![MLMC](https://user-images.githubusercontent.com/56386159/149523617-dca391f4-d48a-4ca9-87ab-bd75d9814bab.PNG)
 
 #

@@ -46,6 +46,10 @@
 #
 ![MLMC-RR](https://user-images.githubusercontent.com/56386159/153062615-8a766c2f-424c-4ee0-ba09-9f24ce893e6a.PNG)
 
+#
+### More paths for discrete approximations with lower time steps:
+#
+![MLMC-RR2](https://user-images.githubusercontent.com/56386159/153203285-7a750c3e-cc44-41de-9654-0ecd173ce888.PNG)
 
 #
 ### References:

@@ -1,18 +1,11 @@
-# MLMC
-
-## C++ European and path-dependent options pricing 
+## European and path-dependent options pricing by MLMC
 
 ### Objectives:
 
-- Implementation of closed-form formulas with different discretization schemes
-- Implementation of standard Monte Carlo and Brownian Bridge method for barrier options under both GBM and Heston model
-- Implementation of Multi Level Monte Carlo and antithetic MLMC
-- Comparison of results in terms of variance reduction and time complexity
+- Implementation of Multi Level Monte Carlo method
+- Variance & computational cost comparison with crude MC
+- Test different discretization schemes/Add IS procedure
 
-### Results:
-
-- Variance reduction for MC with Brownian Bridge method vs standard MC
-- Variance reduction for MLMC vs MC
 
 ### Output overview :
 #
@@ -37,19 +30,26 @@
 ##
 ### MLMC:
 #
--With time steps T/2**l:
+- With time steps T/2**l:
 
 ![MLMC](https://user-images.githubusercontent.com/56386159/149523617-dca391f4-d48a-4ca9-87ab-bd75d9814bab.PNG)
 
 #
 ### Multi-step Richardson-Romberg extrapolation:
 #
+- With time step T/rn
 ![MLMC-RR](https://user-images.githubusercontent.com/56386159/153062615-8a766c2f-424c-4ee0-ba09-9f24ce893e6a.PNG)
 
 #
 ### More paths for discrete approximations with lower time steps:
 #
 ![MLMC-RR2](https://user-images.githubusercontent.com/56386159/153203285-7a750c3e-cc44-41de-9654-0ecd173ce888.PNG)
+
+#
+### Results:
+#
+- Variance reduction for MLMC vs MC
+
 
 #
 ### References:

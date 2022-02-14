@@ -48,8 +48,8 @@
 #
 ### Results:
 #
-- Variance reduction for MLMC vs MC
-
+- Computational complexity reduction for MLMC vs MC
+- CPU time reduction for MLMC vs MC
 
 #
 ### References:

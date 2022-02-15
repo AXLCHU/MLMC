@@ -44,14 +44,14 @@
 ![MLMC-RR2](https://user-images.githubusercontent.com/56386159/153203285-7a750c3e-cc44-41de-9654-0ecd173ce888.PNG)
 
 #
-### Example 1: comparaison for Call option pricing
+### Example 1: comparison for Call option pricing
 
 - Using Euler scheme
 - MC: computational complexity = 300,175,143 & CPU time = 36.7 sec
 - MLMC: computational complexity = 51,783,564 & CPU time = 6.7 sec
 
 #
-### Example 2: comparaison for Up-and-Out Call Barrier option pricing
+### Example 2: comparison for Up-and-Out Call Barrier option pricing
 
 - Using Milstein scheme
 - MC: computational complexity = & CPU time =  sec

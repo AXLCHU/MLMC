@@ -11,7 +11,7 @@
 #
 
 ### EU & barrier option pricing:
-#
+
 - Closed-form formula:
 
 ![MLMC_Results_1](https://user-images.githubusercontent.com/56386159/134658050-b15903d5-766b-49aa-9556-698b54aad12d.PNG)
@@ -45,20 +45,18 @@
 
 ![MLMC-RR2](https://user-images.githubusercontent.com/56386159/153203285-7a750c3e-cc44-41de-9654-0ecd173ce888.PNG)
 
-#
-### Results:
 
-- Computational complexity reduction for MLMC vs MC
-- CPU time reduction for MLMC vs MC
-- 
 #
 ### Example 1: pricing a Call option
+
 - Euler scheme
 - MC: computational complexity = & CPU time = sec
 - MLMC: computational complexity = & CPU time = sec
+
 #
 ### Example 2: pricing a Barrier option
-- Milstein chem
+
+- Milstein scheme
 - MC: computational complexity = & CPU time = sec
 - MLMC: computational complexity = & CPU time = sec
 

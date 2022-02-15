@@ -1,4 +1,4 @@
-## European and path-dependent options pricing by MLMC
+# European and path-dependent options pricing by MLMC
 
 ### Objectives:
 
@@ -6,28 +6,25 @@
 - Variance & computational cost comparison with crude MC
 - Test different discretization schemes/Add IS procedure
 
-
-### Output overview :
 #
-
-### EU & barrier option pricing:
+### Output overview :
 
 - Closed-form formula:
 
 ![MLMC_Results_1](https://user-images.githubusercontent.com/56386159/134658050-b15903d5-766b-49aa-9556-698b54aad12d.PNG)
 
-#
+
 - Crude Monte Carlo:
 
 ![MLMC_Results_2](https://user-images.githubusercontent.com/56386159/134658006-8c886b0a-92cd-4688-8419-e3b68a484a82.PNG)
 
-#
+
 - Brownian Bridge method:
 
 ![MLMC_Results_3](https://user-images.githubusercontent.com/56386159/134657856-cca8a6ae-5dd1-4e54-9a43-bc0547875a9d.PNG)
 
 
-##
+#
 ### MLMC:
 
 - With time steps T/2**l:
@@ -38,6 +35,7 @@
 ### Multi-step Richardson-Romberg extrapolation:
 
 - With time step T/rn
+
 ![MLMC-RR](https://user-images.githubusercontent.com/56386159/153062615-8a766c2f-424c-4ee0-ba09-9f24ce893e6a.PNG)
 
 #
@@ -62,7 +60,7 @@
 
 #
 ### References:
-#
+
 https://people.maths.ox.ac.uk/gilesm/files/OPRE_2008.pdf
 
 https://arxiv.org/pdf/1401.1177.pdf

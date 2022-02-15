@@ -43,25 +43,24 @@
 
 ![MLMC-RR2](https://user-images.githubusercontent.com/56386159/153203285-7a750c3e-cc44-41de-9654-0ecd173ce888.PNG)
 
-
 #
-### Example 1: pricing a Call option
+### Example 1: comparaison for Call option pricing
 
-- Euler scheme
+- Using Euler scheme
 - MC: computational complexity = & CPU time = sec
 - MLMC: computational complexity = & CPU time = sec
 
 #
-### Example 2: pricing a Barrier option
+### Example 2: comparaison for Up-and-Out Call Barrier option pricing
 
-- Milstein scheme
+- Using Milstein scheme
 - MC: computational complexity = & CPU time = sec
 - MLMC: computational complexity = & CPU time = sec
 
 #
 ### References:
 
-https://people.maths.ox.ac.uk/gilesm/files/OPRE_2008.pdf
+- https://people.maths.ox.ac.uk/gilesm/files/OPRE_2008.pdf
 
-https://arxiv.org/pdf/1401.1177.pdf
+- https://arxiv.org/pdf/1401.1177.pdf
 

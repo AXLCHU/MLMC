@@ -31,6 +31,7 @@ void GBM_EULER(std::vector<double>& spot_prices, const double& r, const double& 
 }
 
 
+
 void HESTON_EULER(std::vector<double>& spot_prices, std::vector<double>& vol_paths, const double& r, const double& v, const double& T,
     const double& kappa, const double& theta, const double& xi, const double& rho) {
 
@@ -51,14 +52,24 @@ void HESTON_EULER(std::vector<double>& spot_prices, std::vector<double>& vol_pat
 }
 
 
-void GBM_EULER_V2(std::vector<double>& X_f, std::vector<double>& X_c, const double& time_steps, const double& r, const double& v, const double& T) {
 
-    for (int i = 1; i < time_steps; i++) {
-        double gauss_bm = gaussian_box_muller();
-        X_f[i] = X_f[i-1] + r * (T / time_steps) + v * (sqrt(T / time_steps) * gauss_bm);
-        X_c[i] = X_c[i-1] + r * (T / (time_steps - 1)) + v * (sqrt(T / (time_steps - 1)) * gauss_bm); // different time step
+void GBM_EULER_MLMC(std::vector<double>& Xf, std::vector<double>& Xc, const double& time_steps, const double& M, std::vector<double>& Gauss,
+    const double& r, const double& v, const double& T) {
+
+    double dt_Xf = T / static_cast<double>(Xf.size());
+    double dt_Xc = T / static_cast<double>(Xc.size());
+
+    for (int t = 1; t < Xf.size(); t++) {
+        Gauss[t-1] = gaussian_box_muller();
+        Xf[t] = Xf[t - 1] * exp((r - 0.5 * v * v) * dt_Xf + v * sqrt(dt_Xf) * Gauss[t - 1]);
+    }
+
+    for (int t = 1; t < Xc.size(); t++) {
+        Xc[t] = Xc[t - 1] * exp((r - 0.5 * v * v) * dt_Xc + v * sqrt(dt_Xc) * (/*Gauss[t + M] +*/ Gauss[t - 1])); // different time steps but same brownian
     }
 }
+
+
 
 void GBM_MILSTEIN(std::vector<double>& spot_prices, const double& r, const double& v, const double& T) {
 
@@ -66,12 +77,15 @@ void GBM_MILSTEIN(std::vector<double>& spot_prices, const double& r, const doubl
 
     for (int t = 1; t < spot_prices.size(); t++) {
         double gauss_bm = gaussian_box_muller();
-        spot_prices[t] = spot_prices[t - 1] + r * dt + v * (sqrt(dt)*gauss_bm) + 0.5 * v * v * ((sqrt(dt) * gauss_bm)* (sqrt(dt) * gauss_bm) - dt);
+        spot_prices[t] = spot_prices[t - 1] + r * dt + v * (sqrt(dt)*gauss_bm) + 0.5 * v * v * (pow(sqrt(dt) * gauss_bm, 2) - dt);
     }
 }
 
-void Brownian_Bridge(std::vector<double>& spot_prices, std::vector<double>& p_up, 
-                    std::vector<double>& p_down, const double& r, const double& v, const double& T, double& B, 
+
+
+void Brownian_Bridge(std::vector<double>& spot_prices, 
+                    std::vector<double>& p_up, std::vector<double>& p_down, 
+                    const double& r, const double& v, const double& T, double& B, 
                     double& p_up_cross, double& p_down_cross) {
 
     double dt = T / static_cast<double>(spot_prices.size());
@@ -83,6 +97,24 @@ void Brownian_Bridge(std::vector<double>& spot_prices, std::vector<double>& p_up
         spot_prices[i+1] = spot_prices[i] * drift * exp(vol * gauss_bm);
         p_up[i] = exp((-2 * (std::max(spot_prices[i] - B, 0.0)) * (std::max(spot_prices[i + 1] - B, 0.0))) / v * v * dt * spot_prices[i] * spot_prices[i]);
         p_down[i] = exp((-2 * (std::max(B - spot_prices[i], 0.0)) * (std::max(B - spot_prices[i + 1], 0.0))) / v * v * dt * spot_prices[i] * spot_prices[i]);
+        p_up_cross *= p_up[i];
+        p_down_cross *= p_down[i];
+    }
+}
+
+
+
+void Brownian_Bridge_v2(std::vector<double>& X_f, std::vector<double>& X_c,
+                        std::vector<double>& p_up, std::vector<double>& p_down, 
+                        const double& time_steps, const double& r, const double& v, const double& T, double& B, 
+                        double& p_up_cross, double& p_down_cross) {
+
+    for (int i = 1; i < time_steps; i++) {
+        double gauss_bm = gaussian_box_muller();
+        X_f[i] = X_f[i - 1] + r * (T / time_steps) + v * (sqrt(T / time_steps) * gauss_bm);
+        X_c[i] = X_c[i - 1] + r * (T / (time_steps - 1)) + v * (sqrt(T / (time_steps - 1)) * gauss_bm); // different time steps
+        p_up[i] = exp((-2 * (std::max(X_f[i] - B, 0.0)) * (std::max(X_f[i + 1] - B, 0.0))) / v * v * (T / time_steps) * X_f[i] * X_f[i]);
+        p_down[i] = exp((-2 * (std::max(B - X_f[i], 0.0)) * (std::max(B - X_f[i + 1], 0.0))) / v * v * (T / time_steps) * X_f[i] * X_f[i]);
         p_up_cross *= p_up[i];
         p_down_cross *= p_down[i];
     }

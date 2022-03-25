@@ -37,18 +37,20 @@
 ![MLMC-RR2](https://user-images.githubusercontent.com/56386159/153203285-7a750c3e-cc44-41de-9654-0ecd173ce888.PNG)
 
 #
+# After computation of the optimal parameters:
+#
 ### Example 1: comparison for pricing Call option 
 
 - Using Euler scheme
-- MC: computational complexity = 300,175,143 & CPU time = 36.7 sec
-- MLMC: computational complexity = 51,783,564 & CPU time = 6.7 sec
+- MC: computational complexity = 300E6 & CPU time = 36.7 sec
+- MLMC: computational complexity = 51E6 & CPU time = 6.7 sec
 
 #
 ### Example 2: comparison for pricing Up-and-Out Call Barrier option 
 
 - Using Milstein scheme
-- MC: computational complexity = & CPU time =  sec
-- MLMC: computational complexity =  & CPU time =  sec
+- MC: computational complexity = 561E6 & CPU time = 25 sec
+- MLMC: computational complexity = 36E6 & CPU time = 6 sec
 
 #
 ### References:

@@ -49,8 +49,8 @@
 ### Example 2: comparison for pricing Up-and-Out Call Barrier option 
 
 - Using Milstein scheme
-- MC: computational complexity = 561E6 & CPU time = 25 sec
-- MLMC: computational complexity = 36E6 & CPU time = 6 sec
+- MC: computational complexity = 561E6 & CPU time = 25.5 sec
+- MLMC: computational complexity = 36E6 & CPU time = 6.3 sec
 
 #
 ### References:

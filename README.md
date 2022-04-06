@@ -37,7 +37,7 @@
 ![MLMC-RR2](https://user-images.githubusercontent.com/56386159/153203285-7a750c3e-cc44-41de-9654-0ecd173ce888.PNG)
 
 #
-## After computation of the optimal parameters:
+### After computation of the optimal parameters:
 
 ### Example 1: comparison for pricing Call option 
 
